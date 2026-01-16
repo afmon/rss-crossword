@@ -1,0 +1,36 @@
+{
+  "name": "ai-crossword",
+  "version": "2.0.0",
+  "description": "RSS Reader + AI-powered crossword puzzle generator",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "start": "npm run start --workspace=server",
+    "dev": "npm run dev --workspace=server & npm run dev --workspace=client",
+    "dev:client": "npm run dev --workspace=client",
+    "dev:server": "npm run dev --workspace=server",
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "legacy": "node server.js"
+  },
+  "keywords": [
+    "crossword",
+    "ai",
+    "claude",
+    "news",
+    "rss-reader"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "express": "^4.18.2",
+    "fast-xml-parser": "^4.3.0",
+    "iconv-lite": "^0.6.3",
+    "node-html-markdown": "^2.0.0",
+    "uuid": "^9.0.0"
+  }
+}

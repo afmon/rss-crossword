@@ -1,0 +1,21 @@
+# Environment
+.env
+
+# Dependencies
+node_modules
+
+# Build
+dist
+
+# Database
+data/*.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode
+.idea
+*.sw?

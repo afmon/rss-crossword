@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+# Note: .env.example should be committed
+
+# Database (SQLite)
+*.db
+*.db-shm
+*.db-wal
+
+# Cache and generated data
+data/article-cache.json
+data/puzzles/
+.cache/
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE and editor
+.claude/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

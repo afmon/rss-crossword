@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIニュースクロスワード</title>
+  <link rel="stylesheet" href="css/crossword.css">
+</head>
+<body>
+  <header>
+    <h1>AIニュースクロスワード</h1>
+    <p class="subtitle">Yahoo!ニュース + Claude AI</p>
+    <div class="controls">
+      <label>
+        サイズ:
+        <select id="gridSize">
+          <option value="5">5x5</option>
+          <option value="7">7x7</option>
+          <option value="10" selected>10x10</option>
+          <option value="12">12x12</option>
+          <option value="15">15x15</option>
+        </select>
+      </label>
+      <label>
+        データ範囲:
+        <select id="dataRange">
+          <option value="1">今日のニュース</option>
+          <option value="7" selected>1週間</option>
+          <option value="30">1ヶ月</option>
+          <option value="365">1年</option>
+        </select>
+      </label>
+      <button id="newPuzzle" class="btn btn-primary">新しいパズル</button>
+      <button id="showSaved" class="btn btn-secondary">保存済み</button>
+      <button id="checkAnswers" class="btn btn-secondary" disabled>答え合わせ</button>
+      <button id="copyGrid" class="btn btn-tertiary" disabled>コピー</button>
+    </div>
+
+    <div id="savedPuzzles" class="saved-puzzles hidden">
+      <h3>保存済みパズル</h3>
+      <ul id="savedPuzzleList"></ul>
+      <button id="closeSaved" class="btn btn-small">閉じる</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="puzzle-area">
+      <div id="gridContainer"></div>
+      <div class="clues-panel">
+        <div class="clues-section">
+          <h3>ヨコのカギ</h3>
+          <ul id="acrossClues"></ul>
+        </div>
+        <div class="clues-section">
+          <h3>タテのカギ</h3>
+          <ul id="downClues"></ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="loading" class="hidden">
+    <div class="loading-content">
+      <div class="spinner"></div>
+      <p>最新ニュースからパズルを生成中...</p>
+      <p class="loading-hint">しばらくお待ちください</p>
+    </div>
+  </div>
+
+  <div id="message" class="hidden"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/grid.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
